@@ -1,0 +1,127 @@
+=>Exporting components:
+1. enables the use of a components in other parts
+2. Default Export : Allows exporting a single component as the default module from a module.
+3. Named Export: Allows exporting multiple items from a module.
+4. Importing: To use an expected component, you need to import in the destination file using import syntax
+
+=>Dynamic component:
+1.Dynamic Content: JSX allows the creation of dynamic and interactive UI components.
+2.JavaScript Expressions: using {}, we can embed any JS expression directly with JSX. This includes variables, function calls and more.
+
+=>Reusable components:
+1. Modularity: components are modular allowing for easy reuse across different parts of an application.
+2. Consistency: Resusing components ensures UI Consistency and reduces the chances of discrepancies.
+3. Efficiency: Reduces development time and effort by avoiding duplication of code.
+4. Maintainabilit: Changes made to a reused component reflect everywhere it's used, simplifying updates and bug fixes.
+
+=>Including Bootstrap:
+1. Responsive: Mobile-first design for all device sizes.
+2. Components: Pre-styled elements like buttons and navbars.
+3. Customizable: Modify default styles as needed.
+4. Cross-Browser: consistent look across Browsers
+5. Opensource:
+
+1. install: npm i bootstrap@5.3.2
+2. import "bootstrap/dist/css/bootstrap.min.css";
+
+=>Fragments:
+#Allows grouping of multiple elements without extra DOM nodes.
+#Return multiple elements without a wrapping parent.
+#Cleaner DOM and consistent style.
+<React.Fragment>...</React.Fragment>
+<>...</>
+
+=>Map Method:
+#purpose:Render lists from array data
+#JSX Elements: Transform array items into JSX.
+#Inline rendering: directly inside JSX {items.map(item=><li key={item.id}>{item.name}</li>)}
+#key prop: Assign unique key for optomixed re-renders. <div key = {item.id}>{item.name}</div>
+
+=>Condition Rendering:
+Displaying content based on certain conditions.
+Allows for dynamic interfaces.
+Methods: If-else , Ternary operators, Logical operators.
+
+=>Passing Data Via props:
+.Short for properties
+.Mechanism for passing data.
+.Read only by default.
+#Usage-
+ .Pass data from parent to child component
+ .makes component Reusabl
+ .Defined as attributes in JSX.
+#Key points
+  .Data flows one-way(downwards)
+  .Props are immutable.
+  .Used for communication between components.
+expl : <Header title="My App/>
+
+=>CSS modules 
+  .localized class names to avoid global conflicts.
+  .styles are scoped to individual components.
+  .Helps in creating component-specific styles.
+  .Automatically generates unique class name.
+  .promotes modular and maintable css.
+  .can use alongside global CSS when needed
+
+=>Passing Children:
+  .Children is a special prop for passing elements into components
+  .Used for flexible and reusable component designs.
+  .Common in layout or container components.
+  .Accesseds with props.children.
+  .Can be any content: strings, number, JSX or components.
+  .Enhances component composability and reusability.
+
+=>Handling Events:
+  .use camelCase.
+  .use synthetic events, not direct browser events.
+  .event handler can be functions or arrow functions.
+  .use onChange for controlled form inputs
+  .avoid inline arrow functions in jsx for performance
+
+=>Passing functions via props
+  .Pass dynamic behaviour between components.
+  .Enables upward communication from child to parent.
+  .Commonly used for event handling.
+  .Parents defines a function, child invokes it.
+  .Enhances component interactivity.
+  .expl <Button onClick={handleClick}/>
+
+=>Managing State:
+  .State represents data that changes over time.
+  .State is local and private to the component.
+  .State changes cause the component to re-rendering
+  .For functional components, use the 'useState' hook
+  .React functions that start with word 'use' are called hooks
+  .Hooks should only be used inside components
+  .Parent components can pass state down to children via props
+  .Lifting state up: share state between components by moving it to their closest common ansestor
+
+=>State :
+  .Local and mutable data within a component
+  .Initialized within the component.
+  .Can change over time
+  .causes re-render when updated
+  .Manged using useState in functional components
+
+=>Props:
+  .Passed into a component from its parent
+  .Read-only(immutable) within the receiving component
+  .Allow parent to child component communication
+  .Changes in props can also cause re-render.y
+
+=>React-icon library
+ .npm install react-icons -save
+ .import {IconName} from "react-icons/fc";
+
+=>Inspecting with React Dev tools
+  .see live changes as you modify state or props.
+  .Analyze component re-renders and performance bottlenecks
+  .Convienently navigate through the entire component.
+  .Filter componentsby name or source.
+  .view and edit the current state and performance bottlenecks.
+
+=>How react works
+  .Root component: the app is the main or root component of a react application. it is the starting point of ur react component tree
+  .virtual dom: react creates an in memory structure called virtual dom.differentfrom the actual browser dom. it's light weight representation where each nodes stands for the component and its attributes
+  .Reconcilliation process: when component data changes, react updates the virtual dom's state to mirror these changes.react then compares the current and previous versions of the virtual dom.it defines the specific nodes that needs updating. only these nodes are updated in the real browser dom, making it efficient.
